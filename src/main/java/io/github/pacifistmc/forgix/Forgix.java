@@ -184,9 +184,9 @@ public class Forgix {
         FileUtils.deleteQuietly(fabricTemps);
         FileUtils.deleteQuietly(quiltTemps);
 
-        forgeJar.delete();
-        fabricJar.delete();
-        quiltJar.delete();
+        if (forgeJar != null && forgeJar.exists()) forgeJar.delete();
+        if (fabricJar != null && fabricJar.exists()) fabricJar.delete();
+        if (quiltJar != null && quiltJar.exists()) quiltJar.delete();
 
         return mergedJar;
     }
